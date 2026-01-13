@@ -176,8 +176,8 @@ body {
 }
 
 .lightbox-content {
-  min-width: 320px;
   min-height: 200px;
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,6 +252,13 @@ body {
 @media (max-width: 768px) {
   .nav { display: none; }
   .burger { display: block; }
+}
+
+@media (min-width: 640px) {
+  .lightbox-content {
+    min-width: 540px;
+    min-height: 200px;
+  }
 }
 
 
