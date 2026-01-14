@@ -52,6 +52,10 @@ body {
   color: var(--primary);
 }
 
+.logo img {
+  width: 120px;
+}
+
 .nav a {
   margin: 0 0.75rem;
   text-decoration: none;
@@ -252,6 +256,18 @@ body {
 @media (max-width: 768px) {
   .nav { display: none; }
   .burger { display: block; }
+  .logo img {
+    width: 90px;
+    margin-top: 4px;
+  }
+
+  header .cta {
+    zoom: .7;
+  }
+
+  .header-left {
+    gap: 0.5rem;
+  }
 }
 
 @media (min-width: 640px) {
