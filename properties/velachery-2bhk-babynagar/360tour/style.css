@@ -828,3 +828,15 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+
+
+/*My custom styles*/
+body.multiple-scenes #titleBar,
+body.multiple-scenes.mobile #titleBar {
+  left: 0;
+}
+
+#sceneListToggle,
+#sceneList {
+  display: none;
+}

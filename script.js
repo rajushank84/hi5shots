@@ -23,7 +23,7 @@ const closeBtn = document.querySelector('.close');
 let groupItems = [];
 let currentIndex = 0;
 
-document.querySelectorAll('.thumb').forEach(thumb => {
+document.querySelectorAll('.thumb.with-lightbox').forEach(thumb => {
   thumb.addEventListener('click', () => {
     const grid = thumb.closest('.grid');
     if (!grid) return;
@@ -72,13 +72,13 @@ function render() {
       content.appendChild(video);
     };
   } else {
-    content.innerHTML = '';
-    const link = document.createElement('a');
-    link.href = src;
-    link.target = '_blank';
-    link.className = 'cta';
-    link.textContent = 'Open 3D Walkthrough';
-    content.appendChild(link);
+    // content.innerHTML = '';
+    // const link = document.createElement('a');
+    // link.href = src;
+    // link.target = '_blank';
+    // link.className = 'cta';
+    // link.textContent = 'Open 3D Walkthrough';
+    // content.appendChild(link);
   }
 
   prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
