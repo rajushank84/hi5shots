@@ -61,16 +61,18 @@ function render() {
     };
     img.src = src;
   } else if (type === 'video') {
-    const video = document.createElement('video');
-    video.src = src;
-    video.controls = true;
-    video.autoplay = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.onloadeddata = () => {
-      content.innerHTML = '';
-      content.appendChild(video);
-    };
+    // const video = document.createElement('video');
+    // video.src = src;
+    // video.controls = true;
+    // video.autoplay = true;
+    // video.muted = true;
+    // video.playsInline = true;
+    // video.onloadeddata = () => {
+    //   content.innerHTML = '';
+    //   content.appendChild(video);
+    // };
+    const ytEmbed = `<iframe width="560" height="315" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    content.innerHTML = ytEmbed;
   } else {
     // content.innerHTML = '';
     // const link = document.createElement('a');
