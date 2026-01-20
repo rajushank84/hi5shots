@@ -71,10 +71,12 @@ function render() {
     //   content.innerHTML = '';
     //   content.appendChild(video);
     // };
-    const width = window.innerWidth ? window.innerWidth - 100 : 560;
-    const height = window.innerHeight ? window.innerHeight - 200 : 315;
-    const ytEmbed = `<iframe width="${width}" height="${height}" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-    content.innerHTML = ytEmbed;
+
+    
+    // const width = window.innerWidth ? window.innerWidth - 100 : 560;
+    // const height = window.innerHeight ? window.innerHeight - 200 : 315;
+    // const ytEmbed = `<iframe width="${width}" height="${height}" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    // content.innerHTML = ytEmbed;
   } else {
     // content.innerHTML = '';
     // const link = document.createElement('a');
