@@ -128,7 +128,9 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 2.2rem;
-  color: white;
+/*  color: white;*/
+/*  color: var(--primary);*/
+  color: #FF0000;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
