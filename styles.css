@@ -358,3 +358,17 @@ body {
 .faq-item h4 {
   margin-bottom: 0.25rem;
 }
+
+.lightbox-content img.video-player-thumbnail {
+  position: absolute;
+  width: 100%;
+  max-width: unset;
+  max-height: unset;
+}
+
+@media (min-width: 640px) {
+  .lightbox-content img.video-player-thumbnail {
+    position: absolute;
+    width: 70%;
+  }
+}

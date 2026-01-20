@@ -52,6 +52,7 @@ function render() {
   const item = groupItems[currentIndex];
   const type = item.dataset.type;
   const src = item.dataset.src;
+  const thumbnail = item.dataset.thumbnail;
 
   if (type === 'image') {
     const img = new Image();
@@ -67,11 +68,17 @@ function render() {
     video.autoplay = false;
     video.muted = false;
     video.playsInline = true;
+    const videoThumbnail = document.createElement('img');
+    videoThumbnail.classList.add("video-player-thumbnail");
+    videoThumbnail.src=thumbnail;
+
     video.onloadeddata = () => {
       content.innerHTML = '';
       content.appendChild(video);
+      content.appendChild(videoThumbnail);
     };
     video.onplay = () => {
+      videoThumbnail.style.display = 'none';
       if (video.requestFullscreen) 
           video.requestFullscreen();
       else if (video.webkitRequestFullscreen) 
@@ -79,15 +86,18 @@ function render() {
       else if (video.msRequestFullScreen) 
         video.msRequestFullScreen();
     };
+    video.onplaying = () => {
+      videoThumbnail.style.display = 'none';
+    };
     video.onended = () => {
       document.exitFullscreen();
-// console.log(1);
-//       setTimeout(function() {
-//         document.exitFullscreen();
-//         console.log(3);
-//       }, 100);
-
-// console.log(2);
+      // videoThumbnail.style.display = 'inline';
+    };
+    video.onpause = () => {
+      // videoThumbnail.style.display = 'inline';
+    };    
+    videoThumbnail.onclick = () => {
+      video.play();
     };
 
 
