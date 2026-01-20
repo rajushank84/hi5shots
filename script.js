@@ -61,18 +61,36 @@ function render() {
     };
     img.src = src;
   } else if (type === 'video') {
-    // const video = document.createElement('video');
-    // video.src = src;
-    // video.controls = true;
-    // video.autoplay = true;
-    // video.muted = true;
-    // video.playsInline = true;
-    // video.onloadeddata = () => {
-    //   content.innerHTML = '';
-    //   content.appendChild(video);
-    // };
+    const video = document.createElement('video');
+    video.src = src;
+    video.controls = true;
+    video.autoplay = false;
+    video.muted = false;
+    video.playsInline = true;
+    video.onloadeddata = () => {
+      content.innerHTML = '';
+      content.appendChild(video);
+    };
+    video.onplay = () => {
+      if (video.requestFullscreen) 
+          video.requestFullscreen();
+      else if (video.webkitRequestFullscreen) 
+          video.webkitRequestFullscreen();
+      else if (video.msRequestFullScreen) 
+        video.msRequestFullScreen();
+    };
+    video.onended = () => {
+      document.exitFullscreen();
+// console.log(1);
+//       setTimeout(function() {
+//         document.exitFullscreen();
+//         console.log(3);
+//       }, 100);
 
-    
+// console.log(2);
+    };
+
+
     // const width = window.innerWidth ? window.innerWidth - 100 : 560;
     // const height = window.innerHeight ? window.innerHeight - 200 : 315;
     // const ytEmbed = `<iframe width="${width}" height="${height}" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
