@@ -211,7 +211,7 @@ body {
 }
 
 .shimmer:before {
-    content: 'Loading (HD)...';
+    content: 'Loading...';
     position: absolute;
     height: 100%;
     width: 100%;
