@@ -134,3 +134,11 @@ nextBtn.onclick = () => {
 };
 
 closeBtn.onclick = closeLightbox;
+
+// window.addEventListener("load", function() {
+//   const videos = document.querySelectorAll('.lazy-loaders video');
+
+//   Array.prototype.forEach.call(videos, (video) => {
+//     video.muted = true;
+//   })
+// });
