@@ -211,7 +211,7 @@ body {
 }
 
 .shimmer:before {
-    content: 'Loading...';
+    content: 'Loading (HD)...';
     position: absolute;
     height: 100%;
     width: 100%;
@@ -292,7 +292,8 @@ body {
 
 @media (min-width: 640px) {
   .lightbox-content {
-    min-width: 540px;
+/*    min-width: 540px;*/
+    min-width: 486px;
     min-height: 200px;
   }
 }
@@ -371,4 +372,19 @@ body {
     position: absolute;
     width: 70%;
   }
+}
+
+.lazy-loaders {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: .1;
+  position: fixed;
+}
+
+.lazy-loaders img,
+.lazy-loaders video {
+  height: 1px;
+  width: 1px;
+  opacity: .1;
 }
