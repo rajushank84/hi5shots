@@ -375,16 +375,18 @@ body {
 }
 
 .lazy-loaders {
-  width: 1px;
-  height: 1px;
+/*  width: 1px;
+  height: 1px;*/
   overflow: hidden;
-  opacity: .1;
+/*  opacity: .1;*/
   position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.lazy-loaders img,
+/*.lazy-loaders img,
 .lazy-loaders video {
   height: 1px;
   width: 1px;
   opacity: .1;
-}
+}*/
