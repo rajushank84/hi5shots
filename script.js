@@ -87,6 +87,7 @@ function render() {
     } else {
       image = new Image();
       image.src = src;
+      image.fetchPriority = 'high';
       // image.onload = () => {
         content.innerHTML = '';
         // content.appendChild(image);
