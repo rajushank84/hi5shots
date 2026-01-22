@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <ul class="lux-instructions">
           <li><strong>Click and drag</strong> to look around.</li>
-          <li><strong>Use the arrows</strong> to move between rooms.</li>
+          <li><strong>Click arrows</strong> to move between rooms.</li>
         </ul>
 
         <!--p class="lux-footer">
