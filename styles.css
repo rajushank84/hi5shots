@@ -118,6 +118,16 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.thumb img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 /* PLAY ICON */
