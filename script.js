@@ -64,6 +64,7 @@ function render() {
 
     let image;
     let imageClone;
+    let anchor;
     // console.log(document.querySelectorAll('video'));
     // console.log(src);
     var matchingImages = Array.prototype.filter.call(document.querySelectorAll('.lazy-loaders img'), (item) => item.dataset?.src === src);
@@ -75,14 +76,27 @@ function render() {
       image.removeAttribute('width');
       image.removeAttribute('height');
       content.innerHTML = '';
-      content.appendChild(image);
+      anchor = document.createElement('a');
+      anchor.target = '_blank';
+      // anchor.href = src.replaceAll('photos-compressed', 'photos');
+      anchor.href = src;
+      anchor.appendChild(image);
+      content.appendChild(anchor);
+      // content.appendChild(image);
       document.querySelector('.lazy-loaders').appendChild(imageClone);
     } else {
       image = new Image();
       image.src = src;
-      image.onload = () => {
+      // image.onload = () => {
         content.innerHTML = '';
-        content.appendChild(image);
+        // content.appendChild(image);
+        anchor = document.createElement('a');
+        anchor.target = '_blank';
+        // anchor.href = src.replaceAll('photos-compressed', 'photos');
+        anchor.href = src;
+        anchor.appendChild(image);
+        content.appendChild(anchor);
+
         imageClone = image?.cloneNode();
         imageClone.width = '1';
         imageClone.height = '1';
@@ -90,7 +104,7 @@ function render() {
         imageClone.fetchPriority = 'auto';
         imageClone.loading = 'eager';
         document.querySelector('.lazy-loaders').appendChild(imageClone);
-      };
+      // };
     }
   }
   // else if (type === 'video') {
