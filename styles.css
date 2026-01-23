@@ -107,14 +107,14 @@ body {
 /* GRID */
 .grid {
   display: grid;
-/*  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
-grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/*grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));*/
   gap: 1rem;
   margin-top: 2rem;
 }
 
 .thumb {
-/*  height: 160px;*/
+  height: 160px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
