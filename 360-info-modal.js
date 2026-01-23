@@ -198,8 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       .lux-close-btn {
-        padding: 12px 28px;
-        font-size: 15px;
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: bold;
         letter-spacing: 0.5px;
         border: none;
         border-radius: 10px;
