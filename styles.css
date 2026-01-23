@@ -607,14 +607,16 @@ h1, h2, .section {
 }
 
 .contact-lightbox-content p {
-  margin-bottom: 15px;
-  line-height: 1.5;
+  line-height: 1;
+}
+
+.contact-text {
+  margin-top: 42px;
 }
 
 .contact-number {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 36px;
 }
 
 .contact-number a {
