@@ -700,10 +700,20 @@ h1, h2, .section {
   to { opacity: 1; transform: scale(1); }
 }
 
-
 .whatsapp-icon {
   width: 20px;
   height: 20px;
+}
+
+.contact-lightbox-footer {
+/*  background: var(--bg-alt);*/
+  border-top: 1px dashed #e9e9e9;
+  padding: 12px 0;
+}
+
+.contact-lightbox-footer a,
+.contact-lightbox-footer a:hover {
+  text-decoration: none;
 }
 
 /* Mobile tweaks */
