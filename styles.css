@@ -70,8 +70,8 @@ button {
 }
 
 .logo img {
-  height: 50px;
-  zoom: .75;
+  height: 54px;
+  zoom: .8;
 }
 
 .nav a {
@@ -102,13 +102,17 @@ button {
 
 /* HERO + SECTIONS */
 .hero {
-  padding: 3rem 0 3rem;
+  padding: 3.5rem 0 3rem;
   text-align: center;
   background: linear-gradient(180deg, var(--primary-light), #ffffff);
 }
 
 h1, h2, .section {
   scroll-margin-top: 80px; /* Adjust to your header height */
+}
+
+h1, h2, h3 {
+  color: #333;
 }
 
 .hero-title-mobile {
@@ -127,7 +131,7 @@ h1, h2, .section {
 }
 
 .section {
-  padding: 2rem 0;
+  padding: 2.5rem 0;
 }
 
 .section .container>h2 {
@@ -467,10 +471,10 @@ h1, h2, .section {
 @media (max-width: 768px) {
   .nav { display: none; }
   .burger { display: block; }
-  .logo img {
+/*  .logo img {
     zoom: .666;
   }
-
+*/
   header .cta {
     zoom: .9;
   }
