@@ -16,6 +16,11 @@ body {
   font-family: system-ui, sans-serif;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .container {
   max-width: 1040px;
   margin: auto;
