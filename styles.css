@@ -68,7 +68,7 @@ button {
 }
 
 .logo img {
-  width: 120px;
+  height: 50px;
 }
 
 .nav a {
@@ -465,8 +465,8 @@ h1, h2, .section {
   .nav { display: none; }
   .burger { display: block; }
   .logo img {
-    width: 90px;
-    margin-top: 4px;
+    zoom: .666;
+    margin-top: 8px;
   }
 
   header .cta {
