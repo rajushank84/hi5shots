@@ -422,3 +422,20 @@ document.addEventListener('keydown', (e) => {
     closeLightbox();
   }
 });
+
+document.addEventListener('keydown', function (e) {
+  // Only respond if lightbox is open
+  if (lightbox.classList.contains('hidden')) return;
+
+  if (e.key === 'ArrowLeft') {
+    prevBtn.click();
+  }
+
+  if (e.key === 'ArrowRight') {
+    nextBtn.click();
+  }
+
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
