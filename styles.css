@@ -185,19 +185,46 @@ body {
 .lightbox-inner {
   position: relative;
   background: #fff;
-  padding: 1rem;
   border-radius: 12px;
   max-width: 90vw;
   max-height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .lightbox-content {
   min-height: 200px;
   min-width: 200px;
+/*  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;*/
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: relative;
+}
+
+.lightbox-content {
+  overflow: hidden;
+  position: relative;
+}
+
+.lightbox-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.lightbox-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* SHIMMER */
@@ -248,8 +275,11 @@ body {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #fff;
-  border-radius: 50%;
+  background: #666;
+/*  border-color: #666;
+  border-radius: 100%;*/
+  border-radius: 4px;
+  border: none;
   width: 32px;
   height: 32px;
   font-size: 1.1rem;
@@ -260,19 +290,119 @@ body {
   z-index: 1001;
 }
 
-/* CONTROLS */
-.lightbox-controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.75rem;
+
+/* --- v11a FIX: ensure close button glyph is visible --- */
+.lightbox .close::before {
+  content: "✕";
+  position: absolute;
+  font-size: 1rem;
+  line-height: 1;
+  color: #fff;
+  margin-top: 2px;
 }
 
-.lightbox button {
+
+.lightbox-counter {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+.lightbox-footer {
+/*  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;*/
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.lightbox-footer .prev,
+.lightbox-footer .next {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.lightbox-footer .prev:hover,
+.lightbox-footer .next:hover {
+  background: #163bb8;
+}
+
+.lightbox-footer .prev:disabled,
+.lightbox-footer .next:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.lightbox-counter {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* CONTROLS */
+/*.lightbox-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+*/
+/*.lightbox button {
   background: var(--primary);
   color: #fff;
   border: none;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
+}
+*/
+.lightbox-footer .prev,
+.lightbox-footer .next {
+  background: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+/*  font-weight: 600;*/
+  transition: all 0.2s ease;
+}
+
+.lightbox-footer .prev:hover,
+.lightbox-footer .next:hover {
+  background: #163bb8;
+  transform: translateY(-1px);
+}
+
+.lightbox-footer .prev:active,
+.lightbox-footer .next:active {
+  transform: translateY(0);
+}
+
+.lightbox-footer .prev:disabled,
+.lightbox-footer .next:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: default;
 }
 
 /* FOOTER */
@@ -306,16 +436,6 @@ body {
     min-width: 486px;
     min-height: 200px;
   }
-}
-
-
-/* --- v11a FIX: ensure close button glyph is visible --- */
-.lightbox .close::before {
-  content: "✕";
-  position: absolute;
-  font-size: 1.1rem;
-  line-height: 1;
-  color: #000;
 }
 
 

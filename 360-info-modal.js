@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .lux-content {
         text-align: center;
         font-family: system-ui, sans-serif;
-        margin-top: 30px;
+        margin-top: 36px;
       }
 
       .lux-image {
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         right: 18px;
         background: none;
         border: none;
-        font-size: 26px;
+        font-size: 32px;
         cursor: pointer;
         opacity: 0.6;
         transition: opacity 0.2s ease;
