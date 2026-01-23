@@ -63,12 +63,15 @@ button {
 
 .logo {
   font-weight: 700;
-  font-size: 1.2rem;
   color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   height: 50px;
+  zoom: .75;
 }
 
 .nav a {
@@ -466,7 +469,6 @@ h1, h2, .section {
   .burger { display: block; }
   .logo img {
     zoom: .666;
-    margin-top: 8px;
   }
 
   header .cta {
