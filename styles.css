@@ -4,6 +4,7 @@
   --primary-light: #dbeafe;
 /*  --bg-alt: #f8fafc;*/
   --bg-alt: #f3f8ff;
+  --bg-alt-2: #eee;
 }
 
 * { box-sizing: border-box; }
@@ -99,8 +100,16 @@ body.no-scroll {
   padding: 2rem 0;
 }
 
+.section .container>h2 {
+  margin-top: 0;
+}
+
 .section.alt {
   background: var(--bg-alt);
+}
+
+.section.alt-2 {
+  background: var(--bg-alt-2);
 }
 
 .section-desc,
@@ -580,6 +589,7 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 
 .contact-lightbox-content h2 {
   margin-bottom: 15px;
+  font-size: 1.25em;
 }
 
 .contact-lightbox-content p {
@@ -588,7 +598,7 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .contact-number {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -636,9 +646,5 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 @media (max-width: 480px) {
   .contact-lightbox-content {
     padding: 25px 18px;
-  }
-
-  .contact-number {
-    font-size: 18px;
   }
 }
