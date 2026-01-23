@@ -1,0 +1,5 @@
+body #fullscreenToggle,
+body #autorotateToggle,
+body #titleBar {
+  display: none !important;
+}

@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     modal.innerHTML = `
       <button class="lux-close-x" aria-label="Close">&times;</button>
-      
+      <button class="page-close-x" aria-label="Close">&times;</button>
+
       <div class="lux-content">
         <div class="lux-video-container">
           <video class="lux-video" loading="eager" src="../../../360-illustration-trimmed.mp4" playsinline="true" muted="true" autoplay="true" loop="true"></video>
@@ -52,6 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.overflow = "hidden";
 
     function closeLightbox() {
+      const pageClose = document.querySelector('.page-close-x');
+      if (pageClose) {
+        document.body.appendChild(pageClose);
+      }
+
       overlay.classList.add("fade-out");
       modal.classList.add("fade-out");
 
@@ -66,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.addEventListener("click", closeLightbox);
     modal.querySelector(".lux-close-x").addEventListener("click", closeLightbox);
     modal.querySelector(".lux-close-btn").addEventListener("click", closeLightbox);
+
+    modal.querySelector(".page-close-x").addEventListener("click", () => {
+      window.close();
+    });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeLightbox();
@@ -99,6 +109,20 @@ document.addEventListener("DOMContentLoaded", function () {
         z-index: 9999;
         opacity: 0;
         animation: modalFadeIn 0.4s ease forwards;
+      }
+
+      #luxTourModal .page-close-x {
+        display: none;
+      }
+
+      body .page-close-x {
+        background: #222;
+        color: #fff;
+        border-radius: 4px;
+        padding: 0 10px;
+        font-size: 26px;
+        top: 20px;
+        right: 20px;
       }
 
       .lux-content {
@@ -181,7 +205,8 @@ document.addEventListener("DOMContentLoaded", function () {
         font-style: italic;
       }
 
-      .lux-close-x {
+      .lux-close-x,
+      .page-close-x {
         position: absolute;
         top: 14px;
         right: 18px;
