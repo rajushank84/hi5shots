@@ -74,10 +74,12 @@ let lastTouchTime = 0;
 
 function openLightbox() {
   lightbox.classList.remove('hidden');
+  document.body.classList.add('no-scroll');
   render();
 }
 
 function closeLightbox() {
+  document.body.classList.remove('no-scroll');
   lightbox.classList.add('hidden');
   track.innerHTML = '';
 }
