@@ -2,7 +2,8 @@
 :root {
   --primary: #1d4ed8;
   --primary-light: #dbeafe;
-  --bg-alt: #f8fafc;
+/*  --bg-alt: #f8fafc;*/
+  --bg-alt: #f3f8ff;
 }
 
 * { box-sizing: border-box; }
@@ -89,13 +90,13 @@ body.no-scroll {
 
 /* HERO + SECTIONS */
 .hero {
-  padding: 5rem 0;
+  padding: 3rem 0 3rem;
   text-align: center;
   background: linear-gradient(180deg, var(--primary-light), #ffffff);
 }
 
 .section {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .section.alt {
@@ -528,7 +529,7 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   width: 1px;
   opacity: .1;
 }*/
-.contact-box {
+/*.contact-box {
   max-width: 420px;
   text-align: center;
   padding: 1rem;
@@ -549,4 +550,95 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   font-weight: 600;
   color: #1d4ed8;
   text-decoration: none;
+}*/
+
+.contact-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-lightbox.active {
+  display: flex;
+}
+
+.contact-lightbox-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 25px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.25s ease;
+}
+
+.contact-lightbox-content h2 {
+  margin-bottom: 15px;
+}
+
+.contact-lightbox-content p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.contact-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lightbox-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .contact-lightbox-content {
+    padding: 25px 18px;
+  }
+
+  .contact-number {
+    font-size: 18px;
+  }
 }

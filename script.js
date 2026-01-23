@@ -4,7 +4,6 @@ const track = lightbox.querySelector('.lightbox-track');
 const burger = document.querySelector('.burger');
 const mobileMenu = document.querySelector('.mobile-menu');
 
-const contactTriggers = document.querySelectorAll('.contact-trigger');
 
 if (burger && mobileMenu) {
   burger.addEventListener('click', () => {
@@ -50,11 +49,6 @@ function closeLightbox() {
   document.body.classList.remove('no-scroll');
   lightbox.classList.add('hidden');
   track.innerHTML = '';
-
-  // Restore prev/next buttons visibility
-  prevBtn.style.display = '';
-  nextBtn.style.display = '';
-  lightboxFooter.style.display = '';
 }
 
 
@@ -233,74 +227,36 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-function openContactLightbox() {
-  lightbox.classList.remove('hidden');
-  document.body.classList.add('no-scroll');
-
-  // Clear existing content
-  content.innerHTML = '';
-
-  const wrapper = document.createElement('div');
-  wrapper.className = 'contact-box';
-
-  wrapper.innerHTML = `
-    <div class="contact-lightbox-content">
-    
-    <h3>Get the best visuals for your property</h3>
-
-    <p>
-      📞 Call / WhatsApp us at <strong>9566297782</strong>
-    </p>
-
-    <a href="tel:9566297782" class="cta primary-btn">Call Now</a>
-
-  </div>
-</div>`
-
-  content.appendChild(wrapper);
-
-  // Hide prev/next buttons for contact mode
-  prevBtn.style.display = 'none';
-  nextBtn.style.display = 'none';
-  lightboxFooter.style.display = 'none';
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-  contactTriggers.forEach(btn => {
-    btn.addEventListener('click', openContactLightbox);
+  const lightbox = document.getElementById("contactLightbox");
+  const openButtons = document.querySelectorAll(".contact-btn");
+  const closeBtn = document.getElementById("lightboxClose");
+  const closeBtn2 = document.getElementById("lightboxCloseBtn");
+
+  openButtons.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
   });
 });
-// document.addEventListener("DOMContentLoaded", function () {
-//   const lightbox = document.getElementById("contactLightbox");
-//   const openButtons = document.querySelectorAll(".contact-btn");
-//   const closeBtn = document.getElementById("lightboxClose");
-//   const closeBtn2 = document.getElementById("lightboxCloseBtn");
-
-//   openButtons.forEach(btn => {
-//     btn.addEventListener("click", function (e) {
-//       e.preventDefault();
-//       lightbox.classList.add("active");
-//       document.body.style.overflow = "hidden";
-//     });
-//   });
-
-//   function closeLightbox() {
-//     lightbox.classList.remove("active");
-//     document.body.style.overflow = "";
-//   }
-
-//   closeBtn.addEventListener("click", closeLightbox);
-//   closeBtn2.addEventListener("click", closeLightbox);
-
-//   lightbox.addEventListener("click", function (e) {
-//     if (e.target === lightbox) {
-//       closeLightbox();
-//     }
-//   });
-
-//   document.addEventListener("keydown", function (e) {
-//     if (e.key === "Escape") {
-//       closeLightbox();
-//     }
-//   });
-// });
