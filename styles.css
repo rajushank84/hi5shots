@@ -171,6 +171,7 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   text-decoration: none;
+  border-color: #fff;
 }
 
 /* LIGHTBOX */
@@ -430,7 +431,7 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
   header .cta {
-    zoom: .7;
+    zoom: .8;
   }
 
   .header-left {
@@ -527,3 +528,25 @@ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   width: 1px;
   opacity: .1;
 }*/
+.contact-box {
+  max-width: 420px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.contact-box h3 {
+  margin-bottom: 0.75rem;
+}
+
+.contact-box p {
+  margin: 0.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  color: #475569;
+}
+
+.contact-number a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-decoration: none;
+}
