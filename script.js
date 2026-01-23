@@ -407,3 +407,16 @@ nextBtn.onclick = () => {
 // };
 
 closeBtn.onclick = closeLightbox;
+
+lightbox.addEventListener('click', (e) => {
+  // If the click was directly on the overlay (not inside inner box)
+  if (!e.target.closest('.lightbox-inner')) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+    closeLightbox();
+  }
+});
