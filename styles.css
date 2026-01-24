@@ -31,6 +31,10 @@ button {
   font-family: inherit;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .container {
   max-width: 1040px;
   margin: auto;
@@ -119,6 +123,12 @@ button {
   padding: 3.5rem 0 3rem;
   text-align: center;
   background: linear-gradient(180deg, var(--primary-light), #ffffff);
+}
+
+.hero-2 {
+  padding: 3.5rem 0 3rem;
+  text-align: center;
+  background: linear-gradient(180deg, #ede5d9, #ffffff);
 }
 
 h1, h2, .section {
@@ -284,6 +294,10 @@ h1, h2, h3 {
   max-width: 940px;
 }
 
+.lightbox-content-narrower {
+  max-width: 900px;
+}
+
 .lightbox-content {
   overflow: hidden;
   position: relative;
@@ -300,6 +314,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #d9d4cd;
 }
 
 /* SHIMMER */
@@ -753,4 +768,20 @@ h1, h2, h3 {
     width: 100%;
     text-align: center;
   }
+}
+
+/*.single-thumb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+.single-thumb {
+  width: 100%;
+  max-width: 300px;
+}
+
+.single-thumb img {
+  width: 100%;
+  height: auto;
 }
