@@ -220,6 +220,12 @@ h1, h2, h3 {
   border-left: 4px solid var(--primary);
   background: #fff;
   border-radius: 8px;
+  font-size: 1.05em;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #333;
 }
 
 /* CTA */
